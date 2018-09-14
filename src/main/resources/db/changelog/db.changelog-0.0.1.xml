@@ -9,17 +9,55 @@
 	<changeSet author="dipak" id="create_schema1.0" runOnChange="true">
 
 
-	<createTable tableName="user">
-			<column name="user_id" type="int" autoIncrement="true"
+		<createTable tableName="parent_user">
+			<column name="parent_user_id" type="int" autoIncrement="true"
 				incrementBy="1">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
-			
-			<column name="username" type="varchar(20)" />
-			<column name="password" type="varchar(20)" />
-			
-
+			<column name="first_name" type="varchar(40)" />
+			<column name="last_name" type="varchar(40)" />
+			<column name="email" type="varchar(40)" />
+			<column name="occupation" type="varchar(40)" />
+			<column name="country" type="varchar(40)" />
+			<column name="mobile_no" type="varchar(40)" />
+			<column name="child_relation" type="varchar(40)" />
+			<column name="gender" type="varchar(10)" />
+			<column name="status" type="varchar(10)" />
 		</createTable>
+
+		<createTable tableName="child_user">
+			<column name="child_user_id" type="int" autoIncrement="true"
+				incrementBy="1">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="first_name" type="varchar(40)" />
+			<column name="age" type="varchar(40)" />
+			<column name="gender" type="varchar(10)" />
+			<column name="note" type="varchar(100)" />
+			<column name="status" type="varchar(10)" />
+		</createTable>
+
+		<createTable tableName="question">
+			<column name="question_id" type="int" autoIncrement="true"
+				incrementBy="1">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="que_id" type="varchar(100)" />
+			<column name="que" type="varchar(500)" />
+		</createTable>
+
+		<createTable tableName="answer">
+			<column name="answer_id" type="int" autoIncrement="true"
+				incrementBy="1">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="user_id" type="int" />
+			<column name="que_id" type="varchar(100)" />
+			<column name="ans" type="varchar(500)" />
+			<column name="status" type="varchar(10)" />
+		</createTable>
+
+
 
 
 

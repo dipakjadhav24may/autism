@@ -30,7 +30,7 @@ public class AutismAppServerApplication extends SpringBootServletInitializer {
 
 	@SuppressWarnings("unchecked")
 	private Predicate<String> getPaths() {
-		return or(regex("/organization.*"));
+		return or(regex("/autism.*"));
 	}
 
 	@Override
